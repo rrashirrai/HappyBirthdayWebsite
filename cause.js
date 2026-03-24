@@ -1,3 +1,4 @@
+alert("JS is working");
 document.addEventListener("DOMContentLoaded", () => {
 
 const reasons = [
