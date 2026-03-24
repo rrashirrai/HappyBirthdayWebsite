@@ -1,148 +1,96 @@
- // Reasons database
- const reasons = [
-    { 
-        text: "You’re such a kind and wonderful person, and I feel lucky to share such a good bond with you. 💖", 
-        emoji: "🌟",
-        gif: "gif1.gif"
-    },
-    { 
-        text: "May your day be filled with love, laughter, and endless joy. 🌸 ", 
-        emoji: "💗",
-        gif: "gif2.gif"
-    },
-    { 
-        text: "Wishing you success, happiness, and everything your heart desires. ✨ ", 
-        emoji: "💕",
-        gif: "gif1.gif"
-    },
-    { 
-        text: "Stay the amazing girl you are—always spreading positivity around. Have the happiest year ahead! 🥳 ", 
-        emoji: "🌟",
-        gif: "gif2.gif"
-    }
+const reasons = [
+{ text: "So today is not just any random day 👀", emoji: "✨" },
+{ text: "It’s the day someone pretty amazing was born 🎂", emoji: "💖" },
+{ text: "Yes… that someone is me 😌", emoji: "😎" },
+{ text: "Another year older, but definitely cooler 😏", emoji: "🔥" },
+{ text: "Grateful for everything I have in life 💕", emoji: "🌸" },
+{ text: "And excited for everything coming next 🚀", emoji: "⭐" },
+{ text: "More memories, more fun, more growth 🌱", emoji: "🦋" },
+{ text: "And obviously… more cake 🎂😋", emoji: "🍰" },
+{ text: "This is MY journey 💫", emoji: "💫" },
+{ text: "And it’s only getting better from here 💖", emoji: "🌟" }
 ];
 
-// State management
-let currentReasonIndex = 0;
-const reasonsContainer = document.getElementById('reasons-container');
-const shuffleButton = document.querySelector('.shuffle-button');
-const reasonCounter = document.querySelector('.reason-counter');
-let isTransitioning = false;
+let index = 0;
+const container = document.getElementById("reasons-container");
+const button = document.querySelector(".shuffle-button");
+const counter = document.querySelector(".reason-counter");
 
-// Create reason card with gif
-function createReasonCard(reason) {
-    const card = document.createElement('div');
-    card.className = 'reason-card';
-    
-    const text = document.createElement('div');
-    text.className = 'reason-text';
-    text.innerHTML = `${reason.emoji} ${reason.text}`;
-    
-    const gifOverlay = document.createElement('div');
-    gifOverlay.className = 'gif-overlay';
-    gifOverlay.innerHTML = `<img src="${reason.gif}" alt="Friendship Memory">`;
-    
+button.addEventListener("click", () => {
+if (index < reasons.length) {
+
+```
+    const card = document.createElement("div");
+    card.className = "reason-card";
+
+    const text = document.createElement("div");
+    text.className = "reason-text";
+    text.innerHTML = `${reasons[index].emoji} ${reasons[index].text}`;
+
     card.appendChild(text);
-    card.appendChild(gifOverlay);
-    
+    container.appendChild(card);
+
+    // Animation
     gsap.from(card, {
         opacity: 0,
-        y: 50,
-        duration: 0.5,
-        ease: "back.out"
+        y: 40,
+        duration: 0.6
     });
 
-    return card;
+    index++;
+    counter.textContent = `Step ${index} of ${reasons.length}`;
+
+    createFloatingElement();
+
+} else {
+    showEnding();
 }
+```
 
-// Display new reason
-function displayNewReason() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-
-    if (currentReasonIndex < reasons.length) {
-        const card = createReasonCard(reasons[currentReasonIndex]);
-        reasonsContainer.appendChild(card);
-        
-        // Update counter
-        reasonCounter.textContent = `Reason ${currentReasonIndex + 1} of ${reasons.length}`;
-        
-        currentReasonIndex++;
-
-        // Check if we should transform the button
-        if (currentReasonIndex === reasons.length) {
-            gsap.to(shuffleButton, {
-                scale: 1.1,
-                duration: 0.5,
-                ease: "elastic.out",
-                onComplete: () => {
-                    shuffleButton.textContent = "Enter Our Storylane 💫";
-                    shuffleButton.classList.add('story-mode');
-                    shuffleButton.addEventListener('click', () => {
-                        gsap.to('body', {
-                            opacity: 0,
-                            duration: 1,
-                            onComplete: () => {
-                                window.location.href = 'last.html'; // Replace with the actual URL of the next page
-                            }
-                        });
-                    });
-                }
-            });
-        }
-
-        // Create floating elements
-        createFloatingElement();
-        
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 500);
-    } else {
-        // Handle navigation to new page or section
-        window.location.href = "#storylane";
-        // Or trigger your next page functionality
-    }
-}
-
-// Initialize button click
-shuffleButton.addEventListener('click', () => {
-    gsap.to(shuffleButton, {
-        scale: 0.9,
-        duration: 0.1,
-        yoyo: true,
-        repeat: 1
-    });
-    displayNewReason();
 });
 
-// Floating elements function (same as before)
+function showEnding() {
+const endingText = document.querySelector(".ending-text");
+const teddy = document.querySelector(".teddy-hug");
+
+```
+endingText.style.opacity = "1";
+endingText.style.transform = "translateY(0)";
+
+gsap.from(teddy, {
+    scale: 0,
+    duration: 1
+});
+
+button.innerText = "That’s all 🎉";
+button.disabled = true;
+```
+
+}
+
+// Floating emojis
 function createFloatingElement() {
-    const elements = ['🌸', '✨', '💖', '🦋', '⭐'];
-    const element = document.createElement('div');
-    element.className = 'floating';
-    element.textContent = elements[Math.floor(Math.random() * elements.length)];
-    element.style.left = Math.random() * window.innerWidth + 'px';
-    element.style.top = Math.random() * window.innerHeight + 'px';
-    element.style.fontSize = (Math.random() * 20 + 10) + 'px';
-    document.body.appendChild(element);
+const elements = ['💖', '✨', '🎉', '🌸', '⭐'];
+const element = document.createElement('div');
 
-    gsap.to(element, {
-        y: -500,
-        duration: Math.random() * 10 + 10,
-        opacity: 0,
-        onComplete: () => element.remove()
-    });
+```
+element.className = 'floating';
+element.textContent = elements[Math.floor(Math.random() * elements.length)];
+element.style.left = Math.random() * window.innerWidth + 'px';
+element.style.top = Math.random() * window.innerHeight + 'px';
+element.style.fontSize = (Math.random() * 20 + 15) + 'px';
+
+document.body.appendChild(element);
+
+gsap.to(element, {
+    y: -400,
+    opacity: 0,
+    duration: 6,
+    onComplete: () => element.remove()
+});
+```
+
 }
 
-// Custom cursor (same as before)
-const cursor = document.querySelector('.custom-cursor');
-document.addEventListener('mousemove', (e) => {
-    gsap.to(cursor, {
-        x: e.clientX - 15,
-        y: e.clientY - 15,
-        duration: 0.2
-    });
-});
-
-// Create initial floating elements
+// Create floating elements continuously
 setInterval(createFloatingElement, 2000);
