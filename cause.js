@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const reasons = [
 { text: "So today is not just any random day 👀", emoji: "✨" },
 { text: "It’s the day someone pretty amazing was born 🎂", emoji: "💖" },
@@ -30,7 +32,6 @@ if (index < reasons.length) {
     card.appendChild(text);
     container.appendChild(card);
 
-    // Animation
     gsap.from(card, {
         opacity: 0,
         y: 40,
@@ -68,7 +69,6 @@ button.disabled = true;
 
 }
 
-// Floating emojis
 function createFloatingElement() {
 const elements = ['💖', '✨', '🎉', '🌸', '⭐'];
 const element = document.createElement('div');
@@ -92,5 +92,6 @@ gsap.to(element, {
 
 }
 
-// Create floating elements continuously
 setInterval(createFloatingElement, 2000);
+
+});
