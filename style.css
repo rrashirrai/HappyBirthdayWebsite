@@ -15,26 +15,11 @@ background: linear-gradient(-45deg, #ffd6e8, #e0f7ff, #fff0d6, #e6ffd6);
 background-size: 400% 400%;
 animation: gradientBG 12s ease infinite;
 font-family: 'Poppins', sans-serif;
-overflow: hidden;
-position: relative;
-}
-
-/* Custom Cursor */
-.cursor {
-width: 18px;
-height: 18px;
-background: #ff4b8b;
-border-radius: 50%;
-position: fixed;
-pointer-events: none;
-mix-blend-mode: difference;
-transition: transform 0.15s ease;
 }
 
 /* Container */
 .container {
 text-align: center;
-z-index: 1;
 padding: 20px;
 }
 
@@ -43,7 +28,6 @@ h1 {
 font-size: 3.5rem;
 color: #ff4b8b;
 margin-bottom: 1.5rem;
-opacity: 0;
 letter-spacing: 2px;
 }
 
@@ -52,7 +36,6 @@ letter-spacing: 2px;
 font-size: 1.4rem;
 color: #6a5acd;
 margin-bottom: 2.5rem;
-min-height: 2em;
 }
 
 /* Button */
@@ -66,19 +49,11 @@ color: white;
 cursor: pointer;
 box-shadow: 0 0 15px rgba(255, 75, 139, 0.4);
 transition: all 0.3s ease;
-opacity: 1;
 }
 
 .cta-button:hover {
 transform: scale(1.12);
 box-shadow: 0 0 25px rgba(255, 75, 139, 0.6);
-}
-
-/* Floating emojis */
-.floating {
-position: absolute;
-pointer-events: none;
-opacity: 0;
 }
 
 /* Background animation */
