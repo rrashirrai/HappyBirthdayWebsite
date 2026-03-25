@@ -2,95 +2,60 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Special Moments ✨</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Special Moments ✨</title>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap');
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #ffe6f0;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+h1 {
+  color: #ff4b8b;
+  margin-top: 20px;
+}
 
-    body {
-        min-height: 100vh;
-        background: linear-gradient(135deg, #ffd1dc, #e6e6fa, #ffefd5);
-        background-size: 400% 400%;
-        animation: gradientFlow 12s ease infinite;
-        font-family: 'Poppins', sans-serif;
-        color: #444;
-    }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    @keyframes gradientFlow {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+img {
+  width: 250px;
+  margin: 20px;
+  border-radius: 10px;
+}
 
-    .welcome {
-        text-align: center;
-        padding: 3rem 1rem;
-    }
+button {
+  padding: 10px 20px;
+  background: #ff4b8b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+</style>
 
-    .welcome h1 {
-        font-family: 'Dancing Script', cursive;
-        font-size: 3rem;
-        color: #ff4b8b;
-    }
+</head>
 
-    .welcome p {
-        margin-top: 10px;
-    }
+<body>
 
-    .memory-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    }
+<h1>My Special Moments 💖</h1>
 
-    .memory-card {
-        background: white;
-        border-radius: 12px;
-        padding: 10px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+<div class="container">
+  <img src="img1.jpg">
+  <img src="img2.jpg">
+  <img src="img3.jpg">
+</div>
 
-    .memory-img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
+<button onclick="window.location.href='index.html'">
+  Back to Start 🔁
+</button>
 
-    .memory-date {
-        margin-top: 10px;
-        font-weight: bold;
-        color: #ff4b8b;
-    }
-
-    .memory-caption {
-        font-size: 0.9rem;
-        margin-top: 5px;
-    }
-
-    .final-message {
-        text-align: center;
-        padding: 2rem;
-    }
-
-    .final-message h2 {
-        font-family: 'Dancing Script', cursive;
-        color: #ff4b8b;
-    }
-
-    .goodbye-btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background: #ff
-
+</body>
+</html>
