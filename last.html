@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Special Moments ✨</title>
-
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap');
@@ -23,7 +21,6 @@
         background-size: 400% 400%;
         animation: gradientFlow 12s ease infinite;
         font-family: 'Poppins', sans-serif;
-        overflow-x: hidden;
         color: #444;
     }
 
@@ -33,63 +30,39 @@
         100% { background-position: 0% 50%; }
     }
 
-    .floating-hearts {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .heart {
-        position: absolute;
-        font-size: 1.5rem;
-        animation: float 6s infinite ease-in-out;
-    }
-
-    @keyframes float {
-        0% { transform: translateY(100vh); }
-        100% { transform: translateY(-100vh); }
-    }
-
     .welcome {
         text-align: center;
-        padding: 4rem 2rem;
+        padding: 3rem 1rem;
     }
 
     .welcome h1 {
         font-family: 'Dancing Script', cursive;
-        font-size: 3.5rem;
+        font-size: 3rem;
         color: #ff4b8b;
     }
 
     .welcome p {
-        margin-top: 1rem;
-        font-size: 1.1rem;
+        margin-top: 10px;
     }
 
     .memory-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        padding: 2rem;
+        gap: 20px;
+        padding: 20px;
     }
 
     .memory-card {
-        background: rgba(255,255,255,0.9);
-        border-radius: 15px;
-        padding: 1rem;
+        background: white;
+        border-radius: 12px;
+        padding: 10px;
         text-align: center;
-        transition: 0.3s;
-    }
-
-    .memory-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .memory-img {
         width: 100%;
-        height: 220px;
+        height: 200px;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -101,85 +74,23 @@
     }
 
     .memory-caption {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         margin-top: 5px;
     }
 
     .final-message {
         text-align: center;
-        padding: 3rem;
+        padding: 2rem;
     }
 
     .final-message h2 {
         font-family: 'Dancing Script', cursive;
-        font-size: 2.8rem;
         color: #ff4b8b;
-    }
-
-    .final-message p {
-        margin-top: 1rem;
-        line-height: 1.6;
     }
 
     .goodbye-btn {
         display: inline-block;
         margin-top: 20px;
-        padding: 10px 25px;
-        background: linear-gradient(45deg, #ff4b8b, #ff8fb1);
-        color: white;
-        border-radius: 25px;
-        text-decoration: none;
-    }
-</style>
+        padding: 10px 20px;
+        background: #ff
 
-
-</head>
-
-<body>
-
-
-<div class="floating-hearts">
-    <div class="heart">💖</div>
-    <div class="heart">✨</div>
-    <div class="heart">🌸</div>
-</div>
-
-<section class="welcome">
-    <h1>My Special Moments 💖</h1>
-    <p>Every moment I’ve lived has shaped who I am today… and I’m grateful for it all ✨</p>
-</section>
-
-<div class="memory-container">
-    <div class="memory-card">
-        <img src="./img1.jpg" class="memory-img">
-        <div class="memory-date">A Beautiful Me ✨</div>
-        <div class="memory-caption">Learning, growing, and becoming better every day 💕</div>
-    </div>
-
-    <div class="memory-card">
-        <img src="./img2.jpg" class="memory-img">
-        <div class="memory-date">Happy Moments 😊</div>
-        <div class="memory-caption">Smiling through everything life throws at me 💖</div>
-    </div>
-
-    <div class="memory-card">
-        <img src="./img3.jpg" class="memory-img">
-        <div class="memory-date">My Journey 🚀</div>
-        <div class="memory-caption">This is just the beginning of something amazing ✨</div>
-    </div>
-</div>
-
-<section class="final-message">
-    <h2>This Is My Story 💫</h2>
-    <p>
-        Every year I grow stronger, happier, and more confident.<br>
-        I’m proud of how far I’ve come and excited for what’s ahead.
-    </p>
-    <p>Here’s to more dreams, more memories, and a beautiful future 💖</p>
-
-    <a href="#" class="goodbye-btn">The End… or Just the Beginning? ✨</a>
-</section>
-
-
-</body>
-</html>
