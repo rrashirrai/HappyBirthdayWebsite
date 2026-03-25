@@ -22,7 +22,7 @@ const counter = document.querySelector(".reason-counter");
 button.addEventListener("click", () => {
 if (index < reasons.length) {
 
-```
+
     const card = document.createElement("div");
     card.className = "reason-card";
 
@@ -47,7 +47,7 @@ if (index < reasons.length) {
 } else {
     showEnding();
 }
-```
+
 
 });
 
@@ -55,7 +55,7 @@ function showEnding() {
 const endingText = document.querySelector(".ending-text");
 const teddy = document.querySelector(".teddy-hug");
 
-```
+
 endingText.style.opacity = "1";
 endingText.style.transform = "translateY(0)";
 
@@ -66,7 +66,7 @@ gsap.from(teddy, {
 
 button.innerText = "That’s all 🎉";
 button.disabled = true;
-```
+
 
 }
 
@@ -74,7 +74,7 @@ function createFloatingElement() {
 const elements = ['💖', '✨', '🎉', '🌸', '⭐'];
 const element = document.createElement('div');
 
-```
+
 element.className = 'floating';
 element.textContent = elements[Math.floor(Math.random() * elements.length)];
 element.style.left = Math.random() * window.innerWidth + 'px';
@@ -89,7 +89,7 @@ gsap.to(element, {
     duration: 6,
     onComplete: () => element.remove()
 });
-```
+
 
 }
 
