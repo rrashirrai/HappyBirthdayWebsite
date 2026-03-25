@@ -27,7 +27,7 @@ const element = document.createElement('div');
 element.className = 'floating';
 element.textContent = floatingElements[Math.floor(Math.random() * floatingElements.length)];
 
-```
+
 element.style.left = Math.random() * 100 + 'vw';
 element.style.top = '100vh';
 element.style.fontSize = (Math.random() * 15 + 20) + 'px';
@@ -43,14 +43,14 @@ gsap.to(element, {
     ease: "power1.out",
     onComplete: () => element.remove()
 });
-```
+
 
 }
 
 // On load animations
 window.addEventListener('load', () => {
 
-```
+
 gsap.from('h1', {
     opacity: 0,
     y: -40,
@@ -67,7 +67,7 @@ gsap.from('.cta-button', {
 typeGreeting();
 
 setInterval(createFloating, 1200);
-```
+
 
 });
 
