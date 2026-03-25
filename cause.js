@@ -40,7 +40,7 @@ if (index < reasons.length) {
     });
 
     index++;
-    counter.textContent = `Step ${index} of ${reasons.length}`;
+   
 
     createFloatingElement();
 
@@ -64,9 +64,12 @@ gsap.from(teddy, {
     duration: 1
 });
 
-button.innerText = "That’s all 🎉";
-button.disabled = true;
+button.innerText = "Go to Final Page 💖";
+button.disabled = false;
 
+button.onclick = () => {
+    window.location.href = "last.html";
+};
 
 }
 
